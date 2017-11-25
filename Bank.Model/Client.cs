@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bank.Model.Enum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +13,6 @@ namespace Bank.Model
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string PESEL { get; set; }
+        public ESexType Sex { get; set; }
     }
 }

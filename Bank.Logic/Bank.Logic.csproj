@@ -40,9 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BankAccountLogic.cs" />
     <Compile Include="BankLogic.cs" />
+    <Compile Include="BankOperations\BorrowMoney.cs" />
+    <Compile Include="BankOperations\CreateDebit.cs" />
+    <Compile Include="BankOperations\CreateInvestment.cs" />
+    <Compile Include="BankOperations\Deposit.cs" />
+    <Compile Include="BankOperations\Withdraw.cs" />
     <Compile Include="ClientLogic.cs" />
     <Compile Include="CustomException\ClientDoesNotExistException.cs" />
+    <Compile Include="CustomException\ExecutedBankOperationException.cs" />
+    <Compile Include="InterestMechanisms\InterestForWoman.cs" />
+    <Compile Include="InterestMechanisms\InterestNewClients.cs" />
     <Compile Include="Interface\IBankAccountLogic.cs" />
     <Compile Include="Interface\IClientLogic.cs" />
     <Compile Include="Interface\IBankLogic.cs" />

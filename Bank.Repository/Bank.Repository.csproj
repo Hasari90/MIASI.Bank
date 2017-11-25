@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseRepository.cs" />
+    <Compile Include="Base\Interface\IId.cs" />
     <Compile Include="Base\Interface\IBaseRepository.cs" />
     <Compile Include="ClientRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

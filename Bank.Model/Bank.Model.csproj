@@ -48,8 +48,10 @@
     <Compile Include="Enum\EHstoryType.cs" />
     <Compile Include="Enum\EOperationType.cs" />
     <Compile Include="Enum\EProductType.cs" />
+    <Compile Include="Enum\ESexType.cs" />
     <Compile Include="History.cs" />
     <Compile Include="Interest.cs" />
+    <Compile Include="InterestMechanism.cs" />
     <Compile Include="Interface\IBankOperation.cs" />
     <Compile Include="Investment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

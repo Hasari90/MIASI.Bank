@@ -19,6 +19,7 @@ namespace Bank.Model
         public string Number { get; set; }
         public IEnumerable<History> HistoryList { get; set; }
         public decimal Balance { get; set; }
+        public InterestMechanism interestMechanism { get; set; }
 
     }
 }

@@ -8,10 +8,9 @@ namespace Bank.Model.Interface
 {
     public interface IBankOperation
     {
-        void Deposit();
-        void Withdraw();
-        void CreateInvestment();
-        void BorrowMoney(decimal moneyToBorrow);
-        void CreateDebit();
+        void ExecuteOperation();
+
+        BankAccount BankAccount { get; set; }
+        bool IsExecuted { get; set; }
     }
 }
