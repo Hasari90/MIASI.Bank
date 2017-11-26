@@ -45,5 +45,10 @@ namespace Bank.Logic
             else
                 throw new ClientDoesNotExistException();
         }
+
+        public void Transfer(BankAccount bankAccount, decimal amount)
+        {
+            bankAccount.Balance += amount;
+        }
     }
 }
