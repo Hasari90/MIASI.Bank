@@ -46,18 +46,20 @@
     <Compile Include="BankOperations\CreateDebit.cs" />
     <Compile Include="BankOperations\CreateInvestment.cs" />
     <Compile Include="BankOperations\Deposit.cs" />
+    <Compile Include="BankOperations\IBankOperation.cs" />
     <Compile Include="BankOperations\Withdraw.cs" />
     <Compile Include="ClientLogic.cs" />
     <Compile Include="CustomException\ClientDoesNotExistException.cs" />
     <Compile Include="CustomException\ExecutedBankOperationException.cs" />
     <Compile Include="InterestMechanisms\InterestForWoman.cs" />
     <Compile Include="InterestMechanisms\InterestNewClients.cs" />
-    <Compile Include="Interface\IBankAccountLogic.cs" />
-    <Compile Include="Interface\IClientLogic.cs" />
-    <Compile Include="Interface\IBankLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Bank.Base\Bank.Base.csproj">
+      <Project>{2225BFA8-8DBD-410A-947F-656252193D16}</Project>
+      <Name>Bank.Base</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Bank.Model\Bank.Model.csproj">
       <Project>{64CD8CA3-352E-4271-AE8F-4B8798118749}</Project>
       <Name>Bank.Model</Name>

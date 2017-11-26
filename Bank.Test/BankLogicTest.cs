@@ -1,11 +1,9 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Bank.Logic.Interface;
+﻿using Bank.Base.Enum;
 using Bank.Logic;
-using System.Linq;
 using Bank.Logic.CustomException;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Bank.Test
 {
@@ -15,7 +13,7 @@ namespace Bank.Test
     [TestClass]
     public class BankLogicTest
     {
-        IBankLogic bankLogic = new BankLogic();
+        BankLogic bankLogic = new BankLogic();
 
         [TestMethod]
         public void BankLogic_CreateClient()
@@ -40,7 +38,7 @@ namespace Bank.Test
             Assert.AreEqual(newClient.PESEL, clientFromBankList.PESEL);
 
             var newClient2 = bankLogic.CreateClient(bank, "test", "testowy2", "12312312312");
-            Assert.AreNotEqual(newClient.ID, newClient2.ID);
+            Assert.AreNotEqual(newClient, newClient2);
         }
 
         [TestMethod]
@@ -59,8 +57,6 @@ namespace Bank.Test
             Assert.AreEqual(2, bank.ClientList.Count());
             bankLogic.DeleteClient(bank, newClient2);
             Assert.AreEqual(1, bank.ClientList.Count());
-            var clientFromBank = bank.ClientList.SingleOrDefault();
-            Assert.AreEqual(0, clientFromBank.ID);
         }
 
         [TestMethod]
@@ -88,18 +84,18 @@ namespace Bank.Test
                 InterestList = new List<Model.Interest>(),
             };
 
-            bankLogic.CreateInterestSystem(bank, 10m, new List<Model.Enum.EProductType>() { Model.Enum.EProductType.BankAccount });
-            bankLogic.CreateInterestSystem(bank, 11m, new List<Model.Enum.EProductType>() { Model.Enum.EProductType.Credit });
-            bankLogic.CreateInterestSystem(bank, 12m, new List<Model.Enum.EProductType>() { Model.Enum.EProductType.Investment});
-            bankLogic.CreateInterestSystem(bank, 13m, new List<Model.Enum.EProductType>() { Model.Enum.EProductType.Investment, Model.Enum.EProductType.Credit });
-            bankLogic.CreateInterestSystem(bank, 14m, new List<Model.Enum.EProductType>() { Model.Enum.EProductType.BankAccount, Model.Enum.EProductType.Credit });
-            bankLogic.CreateInterestSystem(bank, 15m, new List<Model.Enum.EProductType>() { Model.Enum.EProductType.BankAccount, Model.Enum.EProductType.Credit, Model.Enum.EProductType.Investment });
+            bankLogic.CreateInterestSystem(bank, 10m, new List<EProductType>() { EProductType.BankAccount });
+            bankLogic.CreateInterestSystem(bank, 11m, new List<EProductType>() { EProductType.Credit });
+            bankLogic.CreateInterestSystem(bank, 12m, new List<EProductType>() { EProductType.Investment});
+            bankLogic.CreateInterestSystem(bank, 13m, new List<EProductType>() { EProductType.Investment, EProductType.Credit });
+            bankLogic.CreateInterestSystem(bank, 14m, new List<EProductType>() { EProductType.BankAccount, EProductType.Credit });
+            bankLogic.CreateInterestSystem(bank, 15m, new List<EProductType>() { EProductType.BankAccount, EProductType.Credit, EProductType.Investment });
 
             Assert.IsNotNull(bank.InterestList);
             Assert.IsNotNull(!bank.InterestList.Any());
-            Assert.AreEqual(3, bank.InterestList.Where(x => x.DestinationProducts.Any(y => y == Model.Enum.EProductType.BankAccount)).Count());
-            Assert.AreEqual(4, bank.InterestList.Where(x => x.DestinationProducts.Any(y => y == Model.Enum.EProductType.Credit)).Count());
-            Assert.AreEqual(3, bank.InterestList.Where(x => x.DestinationProducts.Any(y => y == Model.Enum.EProductType.Investment)).Count());
+            Assert.AreEqual(3, bank.InterestList.Where(x => x.DestinationProducts.Any(y => y == EProductType.BankAccount)).Count());
+            Assert.AreEqual(4, bank.InterestList.Where(x => x.DestinationProducts.Any(y => y == EProductType.Credit)).Count());
+            Assert.AreEqual(3, bank.InterestList.Where(x => x.DestinationProducts.Any(y => y == EProductType.Investment)).Count());
         }
     }
 }

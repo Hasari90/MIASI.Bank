@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bank.Model.Enum
+namespace Bank.Common.Enum
 {
     public enum ESexType
     {

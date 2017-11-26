@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Bank.Model
 {
@@ -11,15 +7,19 @@ namespace Bank.Model
     /// </summary>
     public class BankAccount
     {
-        public int ID { get; set; }
+        public BankAccount()
+        {
+            CreditList = new List<Credit>();
+            HistoryList = new List<History>();
+        }
 
+        public Client Client { get; set; }
         public bool IsDebit { get; set; }
         public decimal MaxDebitBalance { get; set; }
-        public int ClientID { get; set; }
         public string Number { get; set; }
-        public IEnumerable<History> HistoryList { get; set; }
+        public List<History> HistoryList { get; set; }
         public decimal Balance { get; set; }
         public InterestMechanism interestMechanism { get; set; }
-
+        public List<Credit> CreditList { get; set; }
     }
 }

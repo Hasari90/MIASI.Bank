@@ -1,11 +1,6 @@
-﻿using Bank.Model.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Bank.Logic.CustomException;
 using Bank.Model;
-using Bank.Logic.CustomException;
+using System;
 
 namespace Bank.Logic.BankOperations
 {
@@ -37,7 +32,7 @@ namespace Bank.Logic.BankOperations
         {
             Investment newInvestment = new Investment()
             {
-                BankAccountID = BankAccount.ID,
+                BankAccount = BankAccount,
                 Value = Amount,
                 DateFrom = DateFrom,
                 DateTo = DateTo,

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{64CD8CA3-352E-4271-AE8F-4B8798118749}</ProjectGuid>
+    <ProjectGuid>{D596C565-C173-463E-9956-44891969CB5A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Bank.Model</RootNamespace>
-    <AssemblyName>Bank.Model</AssemblyName>
+    <RootNamespace>Bank.Common</RootNamespace>
+    <AssemblyName>Bank.Common</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,23 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bank.cs" />
-    <Compile Include="BankAccount.cs" />
-    <Compile Include="BankOperation.cs" />
-    <Compile Include="Client.cs" />
-    <Compile Include="Credit.cs" />
-    <Compile Include="History.cs" />
-    <Compile Include="Interest.cs" />
-    <Compile Include="InterestMechanism.cs" />
-    <Compile Include="Investment.cs" />
+    <Compile Include="Enum\EHstoryType.cs" />
+    <Compile Include="Enum\EOperationType.cs" />
+    <Compile Include="Enum\EProductType.cs" />
+    <Compile Include="Enum\ESexType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Raport.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Bank.Base\Bank.Base.csproj">
-      <Project>{2225BFA8-8DBD-410A-947F-656252193D16}</Project>
-      <Name>Bank.Base</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

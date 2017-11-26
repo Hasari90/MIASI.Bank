@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bank.Repository.Base.Interface
+namespace Bank.Common.Enum
 {
-    public interface IId<T> where T: struct
+    public enum EProductType
     {
-        T ID { get; set; }
+        BankAccount,
+        Investment,
+        Credit,
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bank.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bank.Repository
 {
-    public class ClientRepository
+    public class ClientRepository: BaseRepository<Client>
     {
     }
 }
