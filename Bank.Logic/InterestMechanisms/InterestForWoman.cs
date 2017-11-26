@@ -1,9 +1,5 @@
-﻿using Bank.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Bank.Base.Enum;
+using Bank.Model;
 
 namespace Bank.Logic.InterestMechanisms
 {
@@ -19,7 +15,7 @@ namespace Bank.Logic.InterestMechanisms
             //client = 
             //bankAccount.ClientID
 
-            if(client.Sex == Model.Enum.ESexType.Female)
+            if(client.Sex == ESexType.Female)
                 SetInterestValue(0.05m);
             else
                 SetInterestValue(0.01m);

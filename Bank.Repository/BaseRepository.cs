@@ -1,12 +1,9 @@
-﻿using Bank.Repository.Base.Interface;
-using System;
+﻿using Bank.Base.Repository;
+using Bank.Common.Model;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Bank.Repository.Base
+namespace Bank.Repository
 {
     public class BaseRepository<T> : IBaseRepository<T>
         where T : IId<int>, new()

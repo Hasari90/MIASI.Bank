@@ -1,11 +1,6 @@
-﻿using Bank.Model.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Bank.Logic.CustomException;
 using Bank.Model;
-using Bank.Logic.CustomException;
+using System;
 
 namespace Bank.Logic.BankOperations
 {
@@ -34,13 +29,14 @@ namespace Bank.Logic.BankOperations
         {
             Credit newCredit = new Credit()
             {
-                BankAccountID = BankAccount.ID,
+                BankAccount = BankAccount,
                 DateFrom = DateFrom,
                 BorrowedValue = Amount,
-                /// Reszta
+                // Reszta
+                
             };
 
-            // TODO dodanie kredytu
+            BankAccount.CreditList.Add(newCredit);
 
             IsExecuted = true;
         }

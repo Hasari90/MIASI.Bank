@@ -1,14 +1,9 @@
-﻿using Bank.Logic.Interface;
+﻿using Bank.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Bank.Model;
 
 namespace Bank.Logic
 {
-    public class ClientLogic : IClientLogic
+    public class ClientLogic
     {
         public void CloseBankAccount(BankAccount bankAccount)
         {
