@@ -1,8 +1,9 @@
 ﻿using Bank.Model;
+using Bank.Logic.Mediator;
 
 namespace Bank.Logic.BankOperations
 {
-    class BankTransfer : IBankOperation
+    public class BankTransfer : IBankOperation
     {
         public BankAccount BankAccount { get; set; }
         public BankAccount DestinationBankAccount { get; set; }
@@ -10,7 +11,7 @@ namespace Bank.Logic.BankOperations
         public decimal Amount { get; set; }
         public bool IsExecuted { get; set; }
 
-        public Mediator mediator { get; set; }
+        public IMediator Mediator { get; set; }
 
         public BankTransfer(decimal amount, BankAccount bankAccount, BankAccount sendAccount, Model.Bank bank)
         {
@@ -24,7 +25,7 @@ namespace Bank.Logic.BankOperations
         public void ExecuteOperation()
         {
             BankAccount.Balance -= Amount;
-            mediator.Send(Amount, DestinationBankAccount, Bank);
+            Mediator.Send(Amount, DestinationBankAccount, Bank);
             IsExecuted = true;
         }
 

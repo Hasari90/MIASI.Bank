@@ -1,8 +1,7 @@
 ﻿using Bank.Model;
-using Bank.Model.Interface;
 using System.Collections.Generic;
 
-namespace Bank.Logic
+namespace Bank.Logic.Mediator
 {
     public class Mediator : IMediator
     {

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bank.Logic.Raport
+namespace Bank.Logic.Report
 {
-    public class Raport
+    public interface ISelectReportByAge
     {
+        void RunSelectReportByAge();
     }
 }

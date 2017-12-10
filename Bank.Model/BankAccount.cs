@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Bank.Base.Visitor;
+using System.Collections.Generic;
 
 namespace Bank.Model
 {
     /// <summary>
     /// Rachunek bankowy
     /// </summary>
-    public class BankAccount
+    public class BankAccount: Element
     {
         public BankAccount()
         {
@@ -21,5 +22,8 @@ namespace Bank.Model
         public decimal Balance { get; set; }
         public InterestMechanism interestMechanism { get; set; }
         public List<Credit> CreditList { get; set; }
+
+        public override void Accept(IVisitor visitor)
+            => visitor.Visit(this);
     }
 }

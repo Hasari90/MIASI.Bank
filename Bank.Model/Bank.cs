@@ -15,5 +15,7 @@ namespace Bank.Model
         public string Name { get; set; }
         public List<Client> ClientList { get; set; }
         public List<Interest> InterestList { get; set; }
+
+
     }
 }
