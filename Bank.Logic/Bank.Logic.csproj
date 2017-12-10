@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="BankAccountLogic.cs" />
     <Compile Include="BankLogic.cs" />
+    <Compile Include="BankOperations\BankTransfer.cs" />
     <Compile Include="BankOperations\BorrowMoney.cs" />
     <Compile Include="BankOperations\CreateDebit.cs" />
     <Compile Include="BankOperations\CreateInvestment.cs" />
@@ -53,7 +54,10 @@
     <Compile Include="CustomException\ExecutedBankOperationException.cs" />
     <Compile Include="InterestMechanisms\InterestForWoman.cs" />
     <Compile Include="InterestMechanisms\InterestNewClients.cs" />
+    <Compile Include="Interface\IMediator.cs" />
+    <Compile Include="Mediator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raport\Raport.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bank.Base\Bank.Base.csproj">

@@ -6,8 +6,10 @@ namespace Bank.Model
     {
         public Bank()
         {
-            ClientList = new List<Client>();
-            InterestList = new List<Interest>();
+            if(ClientList == null)
+                ClientList = new List<Client>();
+            if(InterestList == null)
+                InterestList = new List<Interest>();
         }
 
         public string Name { get; set; }

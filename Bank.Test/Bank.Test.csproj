@@ -53,6 +53,8 @@
     <Compile Include="PeselValidatorTest.cs" />
     <Compile Include="ClientLogicTest.cs" />
     <Compile Include="BankAccountLogicTest.cs" />
+    <Compile Include="MediatorTest.cs" />
+    <Compile Include="VisitorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
