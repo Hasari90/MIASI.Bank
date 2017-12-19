@@ -1,6 +1,6 @@
-﻿using Bank.Base.Enum;
+﻿using Bank.Base.CustomException;
+using Bank.Base.Enum;
 using Bank.Logic;
-using Bank.Logic.CustomException;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;

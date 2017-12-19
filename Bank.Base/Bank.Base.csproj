@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomException\ClientDoesNotExistException.cs" />
+    <Compile Include="CustomException\ExecutedBankOperationException.cs" />
+    <Compile Include="CustomException\InsufficientAccountBalanceException.cs" />
+    <Compile Include="Decorator\IWithdrawMoneyOperation.cs" />
     <Compile Include="Enum\EHstoryType.cs" />
     <Compile Include="Enum\EOperationType.cs" />
     <Compile Include="Enum\EProductType.cs" />

@@ -7,6 +7,11 @@ namespace Bank.Model
 {
     public class Client: Element
     {
+        public Client()
+        {
+            BankAccountList = new List<BankAccount>();
+        }
+
         public Bank Bank { get; set; }
         public List<BankAccount> BankAccountList { get; set; }
         public string Firstname { get; set; }

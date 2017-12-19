@@ -1,5 +1,5 @@
-﻿using Bank.Base.Enum;
-using Bank.Logic.CustomException;
+﻿using Bank.Base.CustomException;
+using Bank.Base.Enum;
 using Bank.Model;
 using System.Collections.Generic;
 

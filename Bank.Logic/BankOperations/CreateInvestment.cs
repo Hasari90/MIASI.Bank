@@ -1,4 +1,4 @@
-﻿using Bank.Logic.CustomException;
+﻿using Bank.Base.CustomException;
 using Bank.Model;
 using System;
 
