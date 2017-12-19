@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Bank.Model;
 using Bank.Base.Enum;
 using Bank.Logic.Report;
+using System.Collections.Generic;
 
 namespace Bank.Test
 {
@@ -76,6 +77,159 @@ namespace Bank.Test
             reportStructure.RunSelectReportByAge();
 
             Assert.AreEqual(5, report.ReportResult.Count);
+        }
+
+        [TestMethod]
+        public void Report_SelectReportByBalanceLessThan1000()
+        {
+            Model.Bank b = new Model.Bank();
+
+            Client c1 = new Client()
+            {
+                Bank = b,
+            };
+            BankAccount ba11 = new BankAccount()
+            {
+                Client = c1,
+                Balance = 500
+            };
+            BankAccount ba12 = new BankAccount()
+            {
+                Client = c1,
+                Balance = 1000
+            };
+            c1.BankAccountList = new List<BankAccount>() { ba11, ba12 };
+
+            Client c2 = new Client()
+            {
+                Bank = b,
+            };
+            BankAccount ba21 = new BankAccount()
+            {
+                Client = c2,
+                Balance = 1000
+            };
+            BankAccount ba22 = new BankAccount()
+            {
+                Client = c2,
+                Balance = 500
+            };
+            BankAccount ba23 = new BankAccount()
+            {
+                Client = c2,
+                Balance = 2000
+            };
+            c2.BankAccountList = new List<BankAccount>() { ba21, ba22, ba23 };
+
+            b.ClientList = new List<Client>() { c1, c2 };
+
+            SelectReportByBalance report = new SelectReportByBalance(ERaportByBalanceType.LessThan, 1000);
+            ISelectReportByBalance reportStructure = new ReportStructure(b, report);
+            reportStructure.RunSelectReportByAmount();
+
+            Assert.AreEqual(2, report.ReportResult.Count);
+        }
+
+        [TestMethod]
+        public void Report_SelectReportByBalanceMoreThan1000()
+        {
+            Model.Bank b = new Model.Bank();
+
+            Client c1 = new Client()
+            {
+                Bank = b,
+            };
+            BankAccount ba11 = new BankAccount()
+            {
+                Client = c1,
+                Balance = 500
+            };
+            BankAccount ba12 = new BankAccount()
+            {
+                Client = c1,
+                Balance = 1000
+            };
+            c1.BankAccountList = new List<BankAccount>() { ba11, ba12 };
+
+            Client c2 = new Client()
+            {
+                Bank = b,
+            };
+            BankAccount ba21 = new BankAccount()
+            {
+                Client = c2,
+                Balance = 1000
+            };
+            BankAccount ba22 = new BankAccount()
+            {
+                Client = c2,
+                Balance = 500
+            };
+            BankAccount ba23 = new BankAccount()
+            {
+                Client = c2,
+                Balance = 2000
+            };
+            c2.BankAccountList = new List<BankAccount>() { ba21, ba22, ba23 };
+
+            b.ClientList = new List<Client>() { c1, c2 };
+
+            SelectReportByBalance report = new SelectReportByBalance(ERaportByBalanceType.MoreThan, 1000);
+            ISelectReportByBalance reportStructure = new ReportStructure(b, report);
+            reportStructure.RunSelectReportByAmount();
+
+            Assert.AreEqual(1, report.ReportResult.Count);
+        }
+
+        [TestMethod]
+        public void Report_SelectReportByBalanceEquals1000()
+        {
+            Model.Bank b = new Model.Bank();
+
+            Client c1 = new Client()
+            {
+                Bank = b,
+            };
+            BankAccount ba11 = new BankAccount()
+            {
+                Client = c1,
+                Balance = 500
+            };
+            BankAccount ba12 = new BankAccount()
+            {
+                Client = c1,
+                Balance = 1000
+            };
+            c1.BankAccountList = new List<BankAccount>() { ba11, ba12 };
+
+            Client c2 = new Client()
+            {
+                Bank = b,
+            };
+            BankAccount ba21 = new BankAccount()
+            {
+                Client = c2,
+                Balance = 1000
+            };
+            BankAccount ba22 = new BankAccount()
+            {
+                Client = c2,
+                Balance = 500
+            };
+            BankAccount ba23 = new BankAccount()
+            {
+                Client = c2,
+                Balance = 2000
+            };
+            c2.BankAccountList = new List<BankAccount>() { ba21, ba22, ba23 };
+
+            b.ClientList = new List<Client>() { c1, c2 };
+
+            SelectReportByBalance report = new SelectReportByBalance(ERaportByBalanceType.Equal, 1000);
+            ISelectReportByBalance reportStructure = new ReportStructure(b, report);
+            reportStructure.RunSelectReportByAmount();
+
+            Assert.AreEqual(2, report.ReportResult.Count);
         }
 
         Client CreateClient(Model.Bank bank, ESexType sex = ESexType.Male, int age = 90)
