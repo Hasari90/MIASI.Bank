@@ -49,9 +49,7 @@
     <Compile Include="BankOperations\Deposit.cs" />
     <Compile Include="BankOperations\IBankOperation.cs" />
     <Compile Include="BankOperations\Withdraw.cs" />
-    <Compile Include="ClientLogic.cs" />
-    <Compile Include="CustomException\ClientDoesNotExistException.cs" />
-    <Compile Include="CustomException\ExecutedBankOperationException.cs" />
+    <Compile Include="Decorator\WithdrawMoneyDecorator.cs" />
     <Compile Include="InterestMechanisms\InterestForWoman.cs" />
     <Compile Include="InterestMechanisms\InterestNewClients.cs" />
     <Compile Include="Mediator\IMediator.cs" />
@@ -59,9 +57,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Report\BaseReport.cs" />
     <Compile Include="Report\ISelectReportByAge.cs" />
+    <Compile Include="Report\ISelectReportByBalance.cs" />
     <Compile Include="Report\ISelectReportBySex.cs" />
     <Compile Include="Report\ReportStructure.cs" />
     <Compile Include="Report\SelectReportByAge.cs" />
+    <Compile Include="Report\SelectReportByBalance.cs" />
     <Compile Include="Report\SelectReportBySex.cs" />
   </ItemGroup>
   <ItemGroup>
