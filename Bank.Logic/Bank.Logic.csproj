@@ -50,8 +50,11 @@
     <Compile Include="BankOperations\IBankOperation.cs" />
     <Compile Include="BankOperations\Withdraw.cs" />
     <Compile Include="Decorator\WithdrawMoneyDecorator.cs" />
+    <Compile Include="InterestMechanisms\InterestForInvestment.cs" />
     <Compile Include="InterestMechanisms\InterestForWoman.cs" />
     <Compile Include="InterestMechanisms\InterestNewClients.cs" />
+    <Compile Include="InterestMechanisms\InterestRegularClients.cs" />
+    <Compile Include="InvestmentLogic.cs" />
     <Compile Include="Mediator\IMediator.cs" />
     <Compile Include="Mediator\Mediator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

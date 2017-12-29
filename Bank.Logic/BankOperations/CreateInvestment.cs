@@ -30,17 +30,18 @@ namespace Bank.Logic.BankOperations
 
         private void DoCreateInvestment()
         {
-            Investment newInvestment = new Investment()
+            if (BankAccount.Balance >= Amount)
             {
-                BankAccount = BankAccount,
-                Value = Amount,
-                DateFrom = DateFrom,
-                DateTo = DateTo,
-                // TODO InterestID
-            };
+                Investment newInvestment = new Investment()
+                {
+                    BankAccount = BankAccount,
+                    Value = Amount,
+                    DateFrom = DateFrom,
+                    DateTo = DateTo
+                };
 
-            //Dodanie do bazy
-
+                BankAccount.Balance -= Amount;
+            }
             IsExecuted = true;
         }
     }

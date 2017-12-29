@@ -11,11 +11,7 @@ namespace Bank.Logic.InterestMechanisms
 
         public override void Calculate()
         {
-            Client client = new Client();
-            //client = 
-            //bankAccount.ClientID
-
-            if(client.Sex == ESexType.Female)
+            if(BankAccount.Client.Sex == ESexType.Female)
                 SetInterestValue(0.05m);
             else
                 SetInterestValue(0.01m);

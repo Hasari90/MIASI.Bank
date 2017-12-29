@@ -8,7 +8,7 @@ namespace Bank.Model
     public class Investment
     {
         public BankAccount BankAccount { get; set; }
-        public Interest Interest { get; set; }
+        public InterestMechanism interestMechanism { get; set; }
         public decimal Value { get; set; }
         public DateTime DateFrom { get; set; }
         public DateTime DateTo { get; set; }

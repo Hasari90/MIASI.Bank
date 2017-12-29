@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="BankLogicTest.cs" />
     <Compile Include="BankOperationLogic.cs" />
+    <Compile Include="InvestmentLogicTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PeselValidatorTest.cs" />
     <Compile Include="ClientLogicTest.cs" />

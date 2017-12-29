@@ -53,7 +53,7 @@ namespace Bank.Test
                 Balance = 1000,
             };
 
-            CreateInvestment ci = new CreateInvestment(ba, 1200, DateTime.Now, DateTime.Now.AddDays(30));
+            CreateInvestment ci = new CreateInvestment(ba, 1000, DateTime.Now, DateTime.Now.AddDays(30));
             ci.ExecuteOperation();
 
             Assert.AreEqual(0, ba.Balance);
