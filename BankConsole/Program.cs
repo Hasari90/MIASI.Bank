@@ -1,18 +1,18 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
+﻿using Bank.Logic.BankOperations;
 using Bank.Model;
-using Bank.Logic.BankOperations;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Bank.Test
+namespace BankConsole
 {
-    [TestClass]
-    public class MediatorTest
+    class Program
     {
-        [TestMethod]
-        public void MediatorTest_Transfer()
+        static void Main(string[] args)
         {
-            Model.Bank bank1 = new Model.Bank()
+            Bank.Model.Bank bank1 = new Bank.Model.Bank()
             {
                 Name = "X",
 
@@ -21,8 +21,8 @@ namespace Bank.Test
             var bankAccount = CreateBankAccount(client);
             client.BankAccountList.Add(bankAccount);
             bank1.ClientList.Add(client);
-            
-            Model.Bank bank2 = new Model.Bank()
+
+            Bank.Model.Bank bank2 = new Bank.Model.Bank()
             {
                 Name = "2"
             };
@@ -34,22 +34,21 @@ namespace Bank.Test
             BankTransfer transfer = new BankTransfer(100, bank1.ClientList[0].BankAccountList[0], bank2.ClientList[0].BankAccountList[0], bank1);
             transfer.ExecuteOperation();
 
-            Assert.AreEqual(true, transfer.IsExecuted);
-
+            Console.ReadKey();
         }
 
-        Client CreateClient(Model.Bank bank)
+       static Client CreateClient(Bank.Model.Bank bank)
         {
             return new Client()
             {
                 Bank = bank,
                 Firstname = $"Test{Guid.NewGuid()}",
                 Lastname = $"Test{Guid.NewGuid()}",
-                Sex = Base.Enum.ESexType.Male,
+                Sex = Bank.Base.Enum.ESexType.Male,
                 PESEL = "12312312312"
             };
         }
-        BankAccount CreateBankAccount(Client client)
+       static BankAccount CreateBankAccount(Client client)
         {
             return new BankAccount()
             {
@@ -58,6 +57,5 @@ namespace Bank.Test
                 Number = Guid.NewGuid().ToString()
             };
         }
-
     }
 }

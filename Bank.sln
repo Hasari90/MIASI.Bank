@@ -1,15 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.Model", "Bank.Model\Bank.Model.csproj", "{64CD8CA3-352E-4271-AE8F-4B8798118749}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4E468C95-2F35-46E2-9391-E01F66515712} = {4E468C95-2F35-46E2-9391-E01F66515712}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.Test", "Bank.Test\Bank.Test.csproj", "{67EBE6B2-E764-49C1-9E68-0ADFB1239113}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.Logic", "Bank.Logic\Bank.Logic.csproj", "{DA1CAD75-A94A-4BBF-83E2-5E6CF7135614}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.Base", "Bank.Base\Bank.Base.csproj", "{2225BFA8-8DBD-410A-947F-656252193D16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAspect", "BankAspect\BankAspect.csproj", "{4E468C95-2F35-46E2-9391-E01F66515712}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankConsole", "BankConsole\BankConsole.csproj", "{6C84E242-927D-41A9-BDAD-43EC647B7744}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +40,14 @@ Global
 		{2225BFA8-8DBD-410A-947F-656252193D16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2225BFA8-8DBD-410A-947F-656252193D16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2225BFA8-8DBD-410A-947F-656252193D16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E468C95-2F35-46E2-9391-E01F66515712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E468C95-2F35-46E2-9391-E01F66515712}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E468C95-2F35-46E2-9391-E01F66515712}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E468C95-2F35-46E2-9391-E01F66515712}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C84E242-927D-41A9-BDAD-43EC647B7744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C84E242-927D-41A9-BDAD-43EC647B7744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C84E242-927D-41A9-BDAD-43EC647B7744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C84E242-927D-41A9-BDAD-43EC647B7744}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

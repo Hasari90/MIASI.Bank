@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DA1CAD75-A94A-4BBF-83E2-5E6CF7135614}</ProjectGuid>
+    <ProjectGuid>{4E468C95-2F35-46E2-9391-E01F66515712}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Bank.Logic</RootNamespace>
-    <AssemblyName>Bank.Logic</AssemblyName>
+    <RootNamespace>BankAspect</RootNamespace>
+    <AssemblyName>BankAspect</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -46,46 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BankAccountLogic.cs" />
-    <Compile Include="BankLogic.cs" />
-    <Compile Include="BankOperations\BankTransfer.cs" />
-    <Compile Include="BankOperations\BorrowMoney.cs" />
-    <Compile Include="BankOperations\CreateDebit.cs" />
-    <Compile Include="BankOperations\CreateInvestment.cs" />
-    <Compile Include="BankOperations\Deposit.cs" />
-    <Compile Include="BankOperations\IBankOperation.cs" />
-    <Compile Include="BankOperations\Withdraw.cs" />
-    <Compile Include="Decorator\WithdrawMoneyDecorator.cs" />
-    <Compile Include="InterestMechanisms\InterestForInvestment.cs" />
-    <Compile Include="InterestMechanisms\InterestForWoman.cs" />
-    <Compile Include="InterestMechanisms\InterestNewClients.cs" />
-    <Compile Include="InterestMechanisms\InterestRegularClients.cs" />
-    <Compile Include="InvestmentLogic.cs" />
-    <Compile Include="Mediator\IMediator.cs" />
-    <Compile Include="Mediator\Mediator.cs" />
+    <Compile Include="Aspect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Report\BaseReport.cs" />
-    <Compile Include="Report\ISelectReportByAge.cs" />
-    <Compile Include="Report\ISelectReportByBalance.cs" />
-    <Compile Include="Report\ISelectReportBySex.cs" />
-    <Compile Include="Report\ReportStructure.cs" />
-    <Compile Include="Report\SelectReportByAge.cs" />
-    <Compile Include="Report\SelectReportByBalance.cs" />
-    <Compile Include="Report\SelectReportBySex.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Bank.Base\Bank.Base.csproj">
-      <Project>{2225BFA8-8DBD-410A-947F-656252193D16}</Project>
-      <Name>Bank.Base</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Bank.Model\Bank.Model.csproj">
-      <Project>{64CD8CA3-352E-4271-AE8F-4B8798118749}</Project>
-      <Name>Bank.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BankAspect\BankAspect.csproj">
-      <Project>{4E468C95-2F35-46E2-9391-E01F66515712}</Project>
-      <Name>BankAspect</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
