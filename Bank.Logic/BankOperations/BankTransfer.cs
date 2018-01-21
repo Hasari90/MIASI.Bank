@@ -14,7 +14,6 @@ namespace Bank.Logic.BankOperations
 
         public IMediator Mediator { get; set; }
 
-        [Aspect]
         public BankTransfer(decimal amount, BankAccount bankAccount, BankAccount sendAccount, Model.Bank bank)
         {
             Amount = amount;
@@ -23,7 +22,6 @@ namespace Bank.Logic.BankOperations
             Bank = bank;
         }
 
-        [Aspect]
         public void ExecuteOperation()
         {
             BankAccount.Balance -= Amount;

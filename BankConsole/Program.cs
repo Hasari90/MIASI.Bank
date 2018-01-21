@@ -1,4 +1,5 @@
 ﻿using Bank.Logic.BankOperations;
+using Bank.Logic.Mediator;
 using Bank.Model;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,8 @@ namespace BankConsole
     {
         static void Main(string[] args)
         {
+            Mediator mediator = new Mediator();
+
             Bank.Model.Bank bank1 = new Bank.Model.Bank()
             {
                 Name = "X",
@@ -31,8 +34,23 @@ namespace BankConsole
             client.BankAccountList.Add(bankAccount);
             bank2.ClientList.Add(client);
 
-            BankTransfer transfer = new BankTransfer(100, bank1.ClientList[0].BankAccountList[0], bank2.ClientList[0].BankAccountList[0], bank1);
+            BankTransfer transfer = new BankTransfer(100, bank1.ClientList[0].BankAccountList[0], bank2.ClientList[0].BankAccountList[0], bank1)
+            {
+                Mediator = mediator,
+            };
             transfer.ExecuteOperation();
+
+            BankTransfer transfer2 = new BankTransfer(300, bank1.ClientList[0].BankAccountList[0], bank2.ClientList[0].BankAccountList[0], bank1)
+            {
+                Mediator = mediator,
+            };
+            transfer2.ExecuteOperation();
+
+            BankTransfer transfer3 = new BankTransfer(400, bank1.ClientList[0].BankAccountList[0], bank2.ClientList[0].BankAccountList[0], bank1)
+            {
+                Mediator = mediator,
+            };
+            transfer3.ExecuteOperation();
 
             Console.ReadKey();
         }

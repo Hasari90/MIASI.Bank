@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using Bank.Model;
 using Bank.Logic.BankOperations;
+using Bank.Logic.Mediator;
 
 namespace Bank.Test
 {
@@ -12,6 +13,8 @@ namespace Bank.Test
         [TestMethod]
         public void MediatorTest_Transfer()
         {
+            Mediator mediator = new Mediator();
+
             Model.Bank bank1 = new Model.Bank()
             {
                 Name = "X",
@@ -21,7 +24,7 @@ namespace Bank.Test
             var bankAccount = CreateBankAccount(client);
             client.BankAccountList.Add(bankAccount);
             bank1.ClientList.Add(client);
-            
+
             Model.Bank bank2 = new Model.Bank()
             {
                 Name = "2"
@@ -31,7 +34,10 @@ namespace Bank.Test
             client.BankAccountList.Add(bankAccount);
             bank2.ClientList.Add(client);
 
-            BankTransfer transfer = new BankTransfer(100, bank1.ClientList[0].BankAccountList[0], bank2.ClientList[0].BankAccountList[0], bank1);
+            BankTransfer transfer = new BankTransfer(100, bank1.ClientList[0].BankAccountList[0], bank2.ClientList[0].BankAccountList[0], bank1)
+            {
+                Mediator = mediator,
+            };
             transfer.ExecuteOperation();
 
             Assert.AreEqual(true, transfer.IsExecuted);
